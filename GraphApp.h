@@ -22,7 +22,6 @@ void CreateGraph(Graphlnk &G) {                                //½¨Á¢Í¼½á¹¹
 		while (!fp.eof()) {                                    //´ÓGraph.txtÎÄ¼þÖÐ¶ÁÈ¡Â·ÓÉÍØÆËÍ¼µÄ»ù±¾ÐÅÏ¢
 			int Router1, Router2, cost;
 			fp >> Router1 >> Router2 >> cost;
-			//cout << cost << endl;
 			G.insertVertex(Router1);
 			G.insertVertex(Router2);
 			G.insertEdge(G.getVertexPos(Router1), G.getVertexPos(Router2), cost);
@@ -31,10 +30,11 @@ void CreateGraph(Graphlnk &G) {                                //½¨Á¢Í¼½á¹¹
 	fp.close();
 }
 
-void printPath(Graph& G, int v, int dist[], int path[]) {//Êä³öÁ½¸ö³µÕ¾Ö®¼äµÄ×î¶ÌÂ·¾¶
-	cout << "´ÓÂ·ÓÉÆ÷" << G.getValue(v) << "µ½ÆäËû¸÷Â·ÓÉÆ÷µÄ×î¶ÌÂ·¾¶Îª£º" << endl;
+void printPath(Graph& G, int v, int dist[], int path[]) {
+	cout << "Â·ÓÉÆ÷" << G.getValue(v) << "µÄÂ·ÓÉÆ÷±íÈçÏÂ£º" << endl;
 	int i, j, k, n = G.NumberOfVertices();
 	int * d = new int[n];
+	cout << "Ä¿µÄÂ·ÓÉÆ÷\t¾àÀë\tÏÂÒ»Ìø" << endl;
 	for (i = 0; i<n; i++)
 	{
 		if (i != v)
@@ -46,11 +46,7 @@ void printPath(Graph& G, int v, int dist[], int path[]) {//Êä³öÁ½¸ö³µÕ¾Ö®¼äµÄ×î¶
 				d[k++] = j;
 				j = path[j];
 			}
-			cout << "Â·ÓÉÆ÷" << G.getValue(i) << "µÄ×î¶ÌÂ·¾¶Îª£º" << G.getValue(v) << " ";
-			while (k>0)
-			{
-				cout << G.getValue(d[--k]) << " ";
-			}
+			cout << G.getValue(i)<<"\t\t"<<dist[i]<<"\t"<< G.getValue(d[--k]);
 			cout << endl;
 		}
 	}
