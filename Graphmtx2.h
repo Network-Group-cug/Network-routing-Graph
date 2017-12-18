@@ -121,6 +121,7 @@ void Graphmtx::ShortestPath(Graphmtx& G, int v, int dist[], int path[]) {
 		}
 	}
 	cout << "从路由器" <<G.getValue(v)<< "到其它各路由器的最短路径为"<<endl;
+	cout << "路由器       " << "下一跳路由器     " << "距离"<<endl;
 	int *d = new int[n];
 	for (i = 0;i < n;i++) 
 		if (i != v) {
@@ -128,8 +129,7 @@ void Graphmtx::ShortestPath(Graphmtx& G, int v, int dist[], int path[]) {
 			while (j != v) {
 				d[k++] = j;j = path[j];
 			}
-			cout << "路由器" << G.getValue(i) << "的下一跳路由器为："<< G.getValue(d[--k]) << " ";
-				cout << "最短路径长度为：" << dist[i] << endl;
+        cout << G.getValue(i) << "            " << G.getValue(d[--k]) << "                   " << dist[i] << endl;
 		}
 	delete[]d;
 }
