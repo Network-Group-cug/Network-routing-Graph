@@ -7,12 +7,15 @@ int main() {
 	Graphlnk Router;
 	CreateGraph(Router);
 	while (R) {
-		cout << "ÇëÊäÈëÒª²éÑ¯µÄÂ·ÓÉÆ÷±àºÅ(ÊäÈë0ÍË³ö)£º";
+		cout << "è¯·è¾“å…¥è¦æŸ¥è¯¢çš„è·¯ç”±å™¨ç¼–å·(è¾“å…¥0é€€å‡º)ï¼š";
 		cin >> R;
-		if(R>0 && R<=Router.NumberOfVertices())		ShortestPath(Router, Router.getVertexPos(R));
-		else if (R != 0) {
-			cout << R << "ºÅÂ·ÓÉÆ÷²»´æÔÚ£¡"<< endl;
-			continue;
+		if (R > 0) {
+			if (Router.getVertexPos(R) == -1) {
+				cout << R << "å·è·¯ç”±å™¨ä¸å­˜åœ¨ï¼"<< endl;
+				continue;
+			}
+			else 
+				ShortestPath(Router, Router.getVertexPos(R));
 		}
 		else continue;
 	}
