@@ -1,8 +1,8 @@
 #include "GraphApp.h"
 
-using namespace std;
-
 int main() {
+	void CreateGraph(Graphmtx &G);
+	void ShortestPath(Graphmtx& G, int v);
 	int R = 1;
 	Graphmtx Router;
 	CreateGraph(Router);
