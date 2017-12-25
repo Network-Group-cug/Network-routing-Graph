@@ -21,6 +21,7 @@ int Graphmtx::getVertexPos(const int vertex)          //»ñÈ¡ÖµÎªvertex µÄ¶¥µãµÄÎ
 		if (VerticesList[i] == vertex)
 			return i;
 	return -1;
+	cout << "¼ÆËã»úÍøÂç" << endl;
 }
 
 Graphmtx::Graphmtx(int sz) {
