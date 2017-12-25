@@ -33,7 +33,7 @@ class Graphmtx {
 		 bool insertEdge(int v1, int v2, int cost);//插入边(v1,v2),权值为cost
 
 		 int getVertexPos(const int vertex);          //获取值为vertex 的顶点的位置
-		 
+		
 };
 
 #endif //GRAPHMTX_H
