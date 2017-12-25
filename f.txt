@@ -1,0 +1,37 @@
+周振芳：
+
+
+设计并编写图的存储结构部分
+完成了 GraphMtx类 设计的具体文件是GraphMtx.h
+包含如下函数：
+Graphmtx(int sz = DefaultVertices);
+
+~Graphmtx() 
+
+int getWeight(int v1, int v2)     //给定两个顶点返回两个顶点的权值，v1=v2 返回0，若 v1 v2不连通返回INT_MAX 
+
+int getValue(const int i)                   //给定顶点在存储结构中的位置返回顶点的具体值
+ 
+int NumberOfVertices()                      //返回顶点的数量
+
+bool insertVertex(const int& vertex);       //插入顶点
+
+bool insertEdge(int v1, int v2, int cost);  //插入边(v1,v2),权值为cost
+
+int getVertexPos(const int vertex)          //获取值为vertex 的顶点的位置
+
+
+
+谢朝旭：
+
+
+负责主函数和生成并输出路由表模块的设计和编写
+完成了 main.cpp 和 GraphApp.h文件
+包含如下函数：
+void CreateGraph(Graphmtx &G)         //通过读取Graph.txt文件来建立图结构
+
+void ShortestPath(Graphmtx& G, int v) //给定某一路由器的位置，求该路由器到其他各个路由器的最短路径并记录
+
+void printPath(Graphmtx& G, int v, int dist[], int path[]) //被ShortestPath()函数调用，用于输出路由表
+
+int main()    //基本界面的建立
