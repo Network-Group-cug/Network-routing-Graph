@@ -23,6 +23,7 @@ void CreateGraph(Graphmtx &G) {                                //建立图结构
 		}
 	}
 	fp.close();
+	
 }
 
 void printPath(Graphmtx& G, int v, int dist[], int path[]) {
@@ -45,6 +46,7 @@ void printPath(Graphmtx& G, int v, int dist[], int path[]) {
 			cout << endl;
 		}
 	}
+	cout<< "xiezhaoxu"<<endl;
 	delete[] d;
 }
 
