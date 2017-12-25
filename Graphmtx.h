@@ -16,23 +16,23 @@ class Graphmtx {
 		 
 
      public:
-		 Graphmtx(int sz = DefaultVertices);
+		 Graphmtx(int sz = DefaultVertices);//构造函数
 
 		 ~Graphmtx() {
-			 delete[]VerticesList;
-			 delete[]Edge;
+			 delete[]VerticesList;//释放顶点数组
+			 delete[]Edge;//释放边数组
 		}
 
-		int getWeight(int v1, int v2) {
+		int getWeight(int v1, int v2) {//获取顶点v1与v2之间的权值
 			if (v1 == v2) return 0;
 			else return v1 != -1 && v2 != -1 ? Edge[v1][v2] : 0;
 		 }
 
-		 int getValue(const int i) {
+		 int getValue(const int i) {//获取i顶点在顶点数组中值
 			 return i >= 0 && i <= numVertices ? VerticesList[i] : NULL;
 		 }
 
-		 int NumberOfVertices() {
+		 int NumberOfVertices() {//返回当前顶点数
 			 return numVertices;
 		 }
 		 bool insertVertex(const int& vertex);//插入顶点
@@ -56,11 +56,11 @@ Graphmtx::Graphmtx(int sz) {
 		Edge[i] = new int[maxVertices];
 	for (i = 0;i < maxVertices;i++)
 		for (j = 0;j < maxVertices;j++)
-			Edge[i][j] = (i == j) ? 0 : maxWeight;
+			Edge[i][j] = (i == j) ? 0 : maxWeight;//邻接矩阵数组初始化
 
 }
 
-bool Graphmtx::insertVertex(const int& vertex) {
+bool Graphmtx::insertVertex(const int& vertex) {//插入顶点
 	if (getVertexPos(vertex) >= 0) return false;
 	if (numVertices == maxVertices)
 		return false;
